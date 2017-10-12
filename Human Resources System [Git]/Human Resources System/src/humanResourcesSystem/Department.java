@@ -1,8 +1,9 @@
 package humanResourcesSystem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Department implements Comparable<Department>
+public class Department implements Comparable<Department>, Serializable
 {
 
 	private String name;
@@ -14,7 +15,7 @@ public class Department implements Comparable<Department>
 	public Department(String name, String location)
 	{
 		if(name == null || location == null)
-			new NullPointerException("Name or Location is empty");
+			throw new NullPointerException("Name or Location is empty");
 		this.name = name;
 		this.location = location;
 		//headOfDept = new Employee();

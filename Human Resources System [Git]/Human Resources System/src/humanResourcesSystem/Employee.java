@@ -31,20 +31,26 @@ public class Employee implements Serializable
 	private int payLevel;
 	private Department curDepartment;
 
+	public Employee()
+	{
+
+	}
+
 	public Employee (String firstName, String lastName, boolean gender, String address, int payLevel, Department curDepartment)
 	{
 		if (firstName == null || lastName == null || address == null)
-			new NullPointerException("First name or last name or address is missing");
+			throw new NullPointerException("First name or last name or address is missing");
 		if(payLevel < 1 || payLevel > MAX_LEVEL)
-			new EmployeeException("Pay Level needs to be higher than 1 or less than max level");
+			throw new EmployeeException("Pay Level needs to be higher than 1 or less than max level");
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
+		this.address = address;
 		this.payLevel = payLevel;
 		this.curDepartment = curDepartment;
 
 		if(nextEmpID > 29999)
-			new EmployeeException("EmployeeId too full");
+			throw new EmployeeException("EmployeeId too full");
 		else
 			id = nextEmpID;
 	}

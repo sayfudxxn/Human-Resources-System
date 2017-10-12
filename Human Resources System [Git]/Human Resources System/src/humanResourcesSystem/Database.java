@@ -1,21 +1,22 @@
 package humanResourcesSystem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 
-public class Database
+public class Database implements Serializable
 {
 	private ArrayList<Department> departments;
-	private HashMap<Integer, Employee> employees;
+	private Map<Integer, Employee> employees;
 
-	public boolean setInformation(ArrayList<Department> departments, HashMap<Integer, Employee> employees)
+	public boolean setInformation(ArrayList<Department> tDept, Map<Integer, Employee> tEmpl)
 	{
 		if(departments == null || employees == null)
 			return false;
 		else
 		{
-			this.departments = departments;
-			this.employees = employees;
+			this.departments = tDept;
+			this.employees = tEmpl;
 			return true;
 		}
 	}
