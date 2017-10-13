@@ -77,7 +77,7 @@ public class Department implements Comparable<Department>, Serializable
 	@Override
 	public String toString()
 	{
-		return "Department Name " + name;
+		return name;
 	}
 
 	@Override
