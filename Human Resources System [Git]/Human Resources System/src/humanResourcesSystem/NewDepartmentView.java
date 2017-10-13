@@ -1,5 +1,6 @@
 package humanResourcesSystem;
 
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -11,50 +12,38 @@ import javax.swing.JTextField;
 
 public class NewDepartmentView extends JFrame
 {
-	private JLabel departmentNameLbl, departmentLocationLbl, headOfDeptLbl;
-	private JTextField departmentNameTF, departmentLocationTF, headOfDeptTF;
-	private JPanel deptNamePanel, deptLocationPanel, headOfDeptPanel, saveBtnPanel;
+	private JLabel departmentNameLbl, departmentLocationLbl;
+	private JTextField departmentNameTF, departmentLocationTF;
+	private JPanel deptNamePanel, deptLocationPanel, saveBtnPanel;
 	private JButton saveBtn;
 
 	public NewDepartmentView ()
 	{
 		departmentNameLbl = new JLabel("Department Name:");
 		departmentLocationLbl = new JLabel("Department Location:");
-		headOfDeptLbl = new JLabel("Head of department");
-		departmentNameTF = new JTextField();
-		departmentLocationTF = new JTextField();
-		headOfDeptTF = new JTextField();
+
+		departmentNameTF = new JTextField(20);
+		departmentLocationTF = new JTextField(18);
+
 		saveBtn = new JButton("Save");
-		//**//
-		deptNamePanel = new JPanel();
-		//deptNamePanel.setLayout(new FlowLayout());
-		deptNamePanel.setLayout(new GridLayout(1,2));
+
+		deptNamePanel = new JPanel(new FlowLayout());
 		deptNamePanel.add(departmentNameLbl);
 		deptNamePanel.add(departmentNameTF);
 
-		deptLocationPanel = new JPanel();
-		//deptLocationPanel.setLayout(new FlowLayout());
-		deptLocationPanel.setLayout(new GridLayout(1,2));
+		deptLocationPanel = new JPanel(new FlowLayout());
 		deptLocationPanel.add(departmentLocationLbl);
 		deptLocationPanel.add(departmentLocationTF);
-		//**
-		headOfDeptPanel = new JPanel();
-		//headOfDeptPanel.setLayout(new FlowLayout());
-		headOfDeptPanel.setLayout(new GridLayout(1,1));
-		headOfDeptPanel.add(headOfDeptLbl);
-		headOfDeptPanel.add(headOfDeptTF);
-		//**
-		saveBtnPanel = new JPanel();
-		saveBtnPanel.setLayout(new FlowLayout());
+
+		saveBtnPanel = new JPanel(new FlowLayout());
 		saveBtnPanel.add(saveBtn);
 
-		setLayout(new GridLayout(4,1));
-		add(deptNamePanel);
-		add(deptLocationPanel);
-		add(headOfDeptPanel);
-		add(saveBtnPanel);
-		setSize(500,200);
-		//pack();
+		//setLayout(new GridLayout(3,1));
+		add(deptNamePanel, BorderLayout.NORTH);
+		add(deptLocationPanel, BorderLayout.CENTER);
+		add(saveBtnPanel, BorderLayout.SOUTH);
+		setResizable(false);
+		pack();
 		setVisible(true);
 	}
 
@@ -71,10 +60,5 @@ public class NewDepartmentView extends JFrame
 	public JTextField getDepartmentLocation()
 	{
 		return departmentLocationTF;
-	}
-
-	public JTextField getHeadOfDept()
-	{
-		return headOfDeptTF;
 	}
 }

@@ -8,6 +8,8 @@ public class Main
 	{
 		//new MainView();
 		//new MainController();
-		new EmployeeView();
+		//new EmployeeView();
+		//new NewDepartmentView();
+		new DepartmentView();
 	}
 }

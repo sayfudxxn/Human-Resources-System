@@ -36,6 +36,7 @@ public class MainView extends JFrame
 		add(topPanel, BorderLayout.NORTH);
 		add(midPanel, BorderLayout.CENTER);
 		add(bottomPanel, BorderLayout.SOUTH);
+		setResizable(false);
 		pack();
 		setVisible(true);
 	}

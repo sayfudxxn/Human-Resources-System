@@ -84,13 +84,13 @@ public class EmployeeView extends JFrame
 		fifthPanel.add(saveChangesBtn);
 		fifthPanel.add(closeBtn);
 
-		//first = rows //second = columns
 		setLayout(new GridLayout(5,1));
 		add(firstPanel);
 		add(secondPanel);
 		add(thirdPanel);
 		add(fourthPanel);
 		add(fifthPanel);
+		setResizable(false);
 		pack();
 		setVisible(true);
 	}
