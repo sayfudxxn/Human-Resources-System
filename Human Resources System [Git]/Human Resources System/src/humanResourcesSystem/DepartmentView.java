@@ -62,4 +62,27 @@ public class DepartmentView extends JFrame
 		setVisible(true);
 	}
 
+	public JButton getBtnClose()
+	{
+		return btnClose;
+	}
+
+
+	public JButton getBtnAlter()
+	{
+		return btnAlter;
+	}
+
+
+	public JButton getBtnSave()
+	{
+		return btnSave;
+	}
+
+
+	public JButton getBtnDelete()
+	{
+		return btnDelete;
+	}
+
 }

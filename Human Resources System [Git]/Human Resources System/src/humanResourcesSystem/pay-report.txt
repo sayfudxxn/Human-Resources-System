@@ -1,0 +1,33 @@
+Department: Accounting
+	Narelle Wilkins	$3705.24
+	Lawrence Dooley	$3113.34
+Total payments for department: $6818.59
+
+Department: Clothing
+	Neil Manson	$2491.55
+Total payments for department: $2491.55
+
+Department: Cosmetics
+	Sheelagh Walton	$1701.76
+Total payments for department: $1701.76
+
+Department: Marketing
+	Jenny Canovan	$3705.24
+	Martin Wright	$2740.70
+	Thomas Hedinger	$2265.04
+	Lara Masciowicz	$2059.13
+Total payments for department: $10770.12
+
+Department: Sales
+	John Provis	$2740.70
+	Davina Coulston	$2265.04
+	Jeremy Pieter 	$2059.13
+	Candace du Mars	$1871.94
+	Bamekan Sivabulasandaram	$1701.76
+Total payments for department: $10638.57
+
+Employees that are not in any specific department: 
+	Heinz Schmidt	$2491.55
+	Kelvin Chang	$2059.13
+
+Total payments for company this fortnight: 36971.25076923077

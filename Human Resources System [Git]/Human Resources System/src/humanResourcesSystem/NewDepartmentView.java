@@ -38,7 +38,6 @@ public class NewDepartmentView extends JFrame
 		saveBtnPanel = new JPanel(new FlowLayout());
 		saveBtnPanel.add(saveBtn);
 
-		//setLayout(new GridLayout(3,1));
 		add(deptNamePanel, BorderLayout.NORTH);
 		add(deptLocationPanel, BorderLayout.CENTER);
 		add(saveBtnPanel, BorderLayout.SOUTH);

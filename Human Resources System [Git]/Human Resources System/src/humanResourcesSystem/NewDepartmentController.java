@@ -22,10 +22,10 @@ public class NewDepartmentController
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				String departmentName = newDepartmentView.getDepartmentName().toString();
-				String departmentLocation = newDepartmentView.getDepartmentLocation().toString();
+				String departmentName = newDepartmentView.getDepartmentName().getText();
+				String departmentLocation = newDepartmentView.getDepartmentLocation().getText();
 				department = new Department(departmentName, departmentLocation);
-
+				new MainController();
 			}
 		});
 	}

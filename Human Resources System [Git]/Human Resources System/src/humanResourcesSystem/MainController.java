@@ -6,25 +6,17 @@ import java.awt.event.ActionListener;
 public class MainController
 {
 	private NewDepartmentView newDepartmentView;
-	private Department department;
+	private DepartmentView departmentView;
+	private EmployeeView employeeView;
 	private MainView mainView;
 
 	public MainController()
 	{
 		mainView = new MainView();
 		addNewDepartment();
-		//saveBtnClicked();
-	}
-	public void saveBtnClicked()
-	{
-		newDepartmentView.getSaveBtn().addActionListener(new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				department = new Department(newDepartmentView.getDepartmentName().toString(), newDepartmentView.getDepartmentLocation().toString());
-			}
-		});
+		manageDepartment();
+		manageEmployees();
+		exitAndSave();
 	}
 
 	public void addNewDepartment()
@@ -39,6 +31,56 @@ public class MainController
 				new NewDepartmentController(newDepartmentView);
 			}
 		});
+	}
+
+	public void manageDepartment()
+	{
+		mainView.getManageDeptBtn().addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				departmentView = new DepartmentView();
+				departmentView.setVisible(true);
+				new DepartmentController(departmentView);
+			}
+		});
+	}
+
+	public void manageEmployees()
+	{
+		mainView.getManageEmployeesBtn().addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				employeeView = new EmployeeView();
+				employeeView.setVisible(true);
+				new EmployeeController(employeeView);
+			}
+		});
+	}
+
+	public void productPayReport()
+	{
+
+	}
+
+	public void exitAndSave()
+	{
+		mainView.getExitAndSaveBtn().addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				System.exit(0);
+			}
+		});
+	}
+
+	public MainView getMainView()
+	{
+		return mainView;
 	}
 
 }
