@@ -1,7 +1,9 @@
 package humanResourcesSystem;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,13 +68,16 @@ public class SystemData implements Serializable
 	{
 		if(employees.containsKey(empID))
 			return employees.get(empID);
-		else
-			return null;
+		else return null;
 	}
 
-	public static void loadFromDisk() throws IOException
+	public static void loadFromDisk() throws IOException, ClassNotFoundException
 	{
-		FileInputStream fis = new FileInputStream("startup.txt");
+		String fileName = new File("src/humanResourcesSystem/startup.txt").getAbsolutePath();
+		FileInputStream fis = new FileInputStream(fileName);
+		//ObjectInputStream ois = new ObjectInputStream(fis);
+		//employees = (Map<Integer, Employee>) ois.readObject();
+
 	}
 
 	public static void loadRawFile()
